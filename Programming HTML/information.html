@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YONKHEMRA | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="khemra.jpg" fetchpriority="high" />
+    <link rel="stylesheet" href="../Programming CSS/portfolio.css" />
+  </head>
+  <body>
+    <!-- Loader (hidden in static mode) -->
+    <div id="loader">
+      <div class="load-num"><span id="loadNum">0</span><small>%</small></div>
+      <div class="load-bar"><i id="loadBar"></i></div>
+      <div class="load-text" data-i="loading">Loading assets...</div>
+    </div>
+
+    <canvas id="stars"></canvas>
+    <div class="glow"></div>
+
+    <!-- Nav -->
+    <nav class="nav" id="nav">
+      <a href="#home" class="active" data-i="nav_home">Home</a>
+      <a href="#about" data-i="nav_about">About</a>
+      <a href="#portfolio" data-i="nav_portfolio">Portfolio</a>
+      <a href="#contact" data-i="nav_contact">Contact</a>
+      <span class="sep"></span>
+      <button
+        class="sound-btn"
+        id="soundBtn"
+        title="Sound"
+        aria-label="Toggle sound"
+      >
+        <svg
+          class="on"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#fff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M11 5 6 9H2v6h4l5 4V5Z" />
+          <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+          <path d="M19 5a10 10 0 0 1 0 14" />
+        </svg>
+        <svg
+          class="off"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#fff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M11 5 6 9H2v6h4l5 4V5Z" />
+          <path d="m22 9-6 6" />
+          <path d="m16 9 6 6" />
+        </svg>
+      </button>
+    </nav>
+    <div class="lang-btn" id="langBtn">
+      <button data-l="en" class="active">EN</button
+      ><button data-l="km">ខ្មែរ</button>
+    </div>
+
+    <main id="mainPage">
+      <!-- HOME -->
+      <section id="home">
+        <div class="container hero-grid">
+          <div class="hero reveal">
+            <h1>
+              <span class="l1" data-i="welcome">Welcome to</span
+              ><span class="l2" data-i="myport">My Portfolio</span>
+            </h1>
+            <div class="sub" data-i="subtitle">
+              Laravel &amp; Firebase Enthusiast
+            </div>
+            <p class="lead" data-i="lead">
+              Curiosity turned into passion. I love experimenting with code,
+              exploring new technologies and turning ideas into something real.
+              From backend logic to clean web interfaces, I always try to build
+              things that don't just look good, but are also comfortable to use.
+            </p>
+            <div class="btns">
+              <a href="#portfolio" class="btn btn-primary"
+                ><span data-i="viewproj">View Projects</span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" /></svg
+              ></a>
+              <a href="#contact" class="btn btn-dark"
+                ><span data-i="contactme">Contact Me</span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m22 2-7 20-4-9-9-4Z" />
+                  <path d="M22 2 11 13" /></svg
+              ></a>
+            </div>
+            <div class="find">
+              <b data-i="findme">FIND ME</b>
+              <div class="socials" id="heroSocials"></div>
+            </div>
+          </div>
+
+          <div class="lanyard-wrap reveal">
+            <div class="lanyard" id="lanyard">
+              <div class="strap"><span id="strapText"></span></div>
+              <div class="clip"></div>
+              <div class="badge" id="badge">
+                <div class="top">
+                  <span>ID · 01</span><i></i><span>2026</span>
+                </div>
+                <svg class="dev" viewBox="0 0 190 54">
+                  <text
+                    x="0"
+                    y="46"
+                    textLength="168"
+                    lengthAdjust="spacingAndGlyphs"
+                    font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif"
+                    font-size="54"
+                    font-weight="700"
+                    fill="#111"
+                  >
+                    DEVELOPER
+                  </text>
+                </svg>
+                <div class="side">BACKEND</div>
+                <div class="pic">
+                  <img
+                    src="khemra.jpg"
+                    alt="Yon Khemra"
+                    fetchpriority="high"
+                  />
+                </div>
+                <div class="plate" id="badgeName">YONKHEMRA</div>
+                <svg class="portsvg" viewBox="0 0 132 32">
+                  <text
+                    x="0"
+                    y="28"
+                    textLength="122"
+                    lengthAdjust="spacingAndGlyphs"
+                    font-family="'Bebas Neue', Impact, 'Arial Narrow', sans-serif"
+                    font-size="32"
+                    font-weight="700"
+                    fill="#111"
+                  >
+                    PORTFOLIO
+                  </text>
+                </svg>
+                <div class="tiny">Web Backend<br />Developer</div>
+                <div class="badge-contact">
+                  <span><i>⌖</i>Tuek Thla, Phnom Penh, Cambodia</span>
+                  <span><i>☎</i>+855 71 653 6009</span>
+                  <span><i>✉</i>yonkhemra097@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container">
+          <h2 class="sec-title reveal">
+            <span class="glitch" data-text="About Me" data-i="aboutme"
+              >About Me</span
+            >
+          </h2>
+
+          <div class="about-grid">
+            <div class="hi reveal">
+              <span class="a" data-i="hi">Hi, I'm</span>
+              <span class="b" id="aboutName">YONKHEMRA</span>
+              <a href="#contact" class="btn btn-primary"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"
+                  />
+                  <path d="M14 3v6h6" />
+                  <path d="M9 14h6" />
+                  <path d="M9 18h4" /></svg
+                ><span data-i="contactme">Contact Me</span></a
+              >
+            </div>
+            <div class="about-photo reveal">
+              <div class="frame">
+                <img src="khemra.jpg" alt="Yon Khemra" />
+              </div>
+            </div>
+            <div class="about-text reveal">
+              <p id="bio1"></p>
+              <p id="bio2"></p>
+              <a href="#portfolio" class="btn btn-outline"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m16 18 6-6-6-6" />
+                  <path d="m8 6-6 6 6 6" /></svg
+                ><span data-i="viewprojshort">View Projects</span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7" />
+                  <path d="M8 7h9v9" /></svg
+              ></a>
+            </div>
+          </div>
+
+          <div class="two-col reveal">
+            <div>
+              <h3 data-i="education">Education</h3>
+              <div id="eduList"></div>
+            </div>
+            <div>
+              <h3 data-i="experience">Experience</h3>
+              <div id="expList"></div>
+            </div>
+          </div>
+
+          <div class="stats reveal">
+            <div class="glass edge spot stat">
+              <div class="row">
+                <div class="ic">
+                  <svg viewBox="0 0 24 24">
+                    <path d="m16 18 6-6-6-6" />
+                    <path d="m8 6-6 6 6 6" />
+                  </svg>
+                </div>
+                <div class="n" id="nProj">0</div>
+              </div>
+              <div>
+                <b data-i="st_proj">Projects</b
+                ><span data-i="st_proj_d">Things I've built</span>
+              </div>
+            </div>
+            <div class="glass edge spot stat">
+              <div class="row">
+                <div class="ic">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="9" r="6" />
+                    <path d="m8.5 14.5-1.5 7 5-3 5 3-1.5-7" />
+                  </svg>
+                </div>
+                <div class="n" id="nCert">0</div>
+              </div>
+              <div>
+                <b data-i="st_cert">Certificates</b
+                ><span data-i="st_cert_d">Validated skills</span>
+              </div>
+            </div>
+            <div class="glass edge spot stat">
+              <div class="row">
+                <div class="ic">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 21h8" />
+                    <path d="M12 17v4" />
+                    <path d="M7 4h10v5a5 5 0 0 1-10 0Z" />
+                    <path d="M17 5h3v2a3 3 0 0 1-3 3" />
+                    <path d="M7 5H4v2a3 3 0 0 0 3 3" />
+                  </svg>
+                </div>
+                <div class="n" id="nAward">0</div>
+              </div>
+              <div>
+                <b data-i="st_award">Awards</b
+                ><span data-i="st_award_d">Achievements earned</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Music -->
+          <div class="glass edge music reveal">
+            <div>
+              <h2>
+                <span class="x" data-i="m1">A little music.</span
+                ><span class="y" data-i="m2">A lot of ideas.</span>
+              </h2>
+              <p data-i="mp">
+                Choose a song below to play it here, or add your own audio
+                files.
+              </p>
+              <button class="btn btn-outline" id="addSongs">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 18V5l12-2v13" />
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="18" cy="16" r="3" /></svg
+                ><span data-i="addsongs">Add songs</span
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 5v14" />
+                  <path d="M5 12h14" />
+                </svg>
+              </button>
+            </div>
+            <div class="player">
+              <div class="p-top">
+                <div class="cover">
+                  <i></i><i></i><i></i><i></i>
+                  <img
+                    id="songCover"
+                    src="https://i.ytimg.com/vi/RgKAFK5djSk/hqdefault.jpg"
+                    alt="See You Again cover art"
+                  />
+                </div>
+                <div class="p-info">
+                  <svg class="spo" viewBox="0 0 24 24">
+                    <path
+                      d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22Zm5 15.9a.7.7 0 0 1-1 .2c-2.6-1.6-5.8-1.9-9.600-1a.7.7 0 1 1-.3-1.400c4.100-.9 7.700-.5 10.600 1.200.4.200.4.700.3 1Zm1.300-3a.9.9 0 0 1-1.200.3c-3-1.800-7.500-2.400-11-1.300a.9.9 0 1 1-.5-1.700c4-1.200 9-.6 12.400 1.500.4.200.5.800.3 1.200Zm.1-3.100c-3.600-2.100-9.500-2.300-12.900-1.300a1.100 1.100 0 1 1-.6-2.100c3.900-1.200 10.400-1 14.600 1.500a1.100 1.100 0 0 1-1.100 1.900Z"
+                    />
+                  </svg>
+                  <h4 id="plTitle">My Coding Playlist</h4>
+                  <div class="by" id="plBy">YONKHEMRA</div>
+                  <div class="saved">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="11" fill="#fff" />
+                      <path
+                        d="m7 12.500 3.200 3.200L17 9"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width="2.400"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      /></svg
+                    ><span id="plNow">—</span>
+                  </div>
+                </div>
+              </div>
+              <div class="ctrl">
+                <button class="t" id="prevBtn" aria-label="Previous">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M6 5h2v14H6zM20 5v14L9 12z" />
+                  </svg>
+                </button>
+                <div class="bar" id="pBar"><i id="pFill"></i></div>
+                <button class="t" id="nextBtn" aria-label="Next">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M16 5h2v14h-2zM4 5v14l11-7z" />
+                  </svg>
+                </button>
+                <span class="time" id="pTime">00:00</span>
+                <button class="playbtn" id="playBtn" aria-label="Play">
+                  <svg class="pl" viewBox="0 0 24 24">
+                    <path d="M7 4v16l14-8z" /></svg
+                  ><svg class="pa" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                  </svg>
+                </button>
+              </div>
+              <div class="tracks" id="tracks"></div>
+              <div class="featured-playlist">
+                <div class="featured-playlist-heading">
+                  <span>SONG PICKS</span>
+                  <span>PLAY ON THIS PAGE</span>
+                </div>
+                <p class="youtube-player-hint" id="youtubeHint">
+                  Choose a song to play it here.
+                </p>
+                <div class="youtube-player" id="youtubePlayer" hidden>
+                  <iframe
+                    id="youtubeFrame"
+                    title="YouTube music player"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
+                <div class="featured-tracks" id="featuredTracks"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio">
+        <div class="container">
+          <h2 class="sec-title reveal">
+            <span class="glitch" data-text="Portfolio" data-i="nav_portfolio"
+              >Portfolio</span
+            >
+          </h2>
+          <div class="tabs-wrap reveal">
+            <div class="tabs" id="tabs">
+              <button class="tab active" data-p="projects">
+                <svg viewBox="0 0 24 24">
+                  <path d="m16 18 6-6-6-6" />
+                  <path d="m8 6-6 6 6 6" /></svg
+                ><span data-i="t_proj">Projects</span>
+              </button>
+              <button class="tab" data-p="certs">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="9" r="6" />
+                  <path d="m8.500 14.500-1.500 7 5-3 5 3-1.500-7" /></svg
+                ><span data-i="t_cert">Certificates</span>
+              </button>
+              <button class="tab" data-p="awards">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 21h8" />
+                  <path d="M12 17v4" />
+                  <path d="M7 4h10v5a5 5 0 0 1-10 0Z" />
+                  <path d="M17 5h3v2a3 3 0 0 1-3 3" />
+                  <path d="M7 5H4v2a3 3 0 0 0 3 3" /></svg
+                ><span data-i="t_award">Achievements</span>
+              </button>
+              <button class="tab" data-p="tech">
+                <svg viewBox="0 0 24 24">
+                  <rect x="5" y="5" width="14" height="14" rx="2" />
+                  <rect x="9" y="9" width="6" height="6" />
+                  <path
+                    d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"
+                  /></svg
+                ><span data-i="t_tech">Tech Stack</span>
+              </button>
+            </div>
+          </div>
+          <div class="panel active" id="p-projects">
+            <div class="proj-grid" id="projGrid"></div>
+          </div>
+          <div class="panel" id="p-certs">
+            <div class="gal" id="galCerts"></div>
+          </div>
+          <div class="panel" id="p-awards">
+            <div class="gal" id="galAwards"></div>
+          </div>
+          <div class="panel" id="p-tech">
+            <div class="tech-grid" id="techGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <h2 class="sec-title reveal">
+            <span class="glitch" data-text="Contact" data-i="nav_contact"
+              >Contact</span
+            >
+          </h2>
+          <div class="glass edge contact-box reveal">
+            <div>
+              <form id="msgForm">
+                <div class="field">
+                  <label data-i="f_name">Name</label>
+                  <div class="inp">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                      <path d="M4 21a8 8 0 0 1 16 0" /></svg
+                    ><input
+                      id="mName"
+                      required
+                      data-ph="f_name_ph"
+                      placeholder="Your name"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label data-i="f_email">Email</label>
+                  <div class="inp">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <path d="m3 7 9 6 9-6" /></svg
+                    ><input
+                      id="mEmail"
+                      type="email"
+                      required
+                      data-ph="f_email_ph"
+                      placeholder="Your email"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label data-i="f_msg">Message</label>
+                  <div class="inp">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"
+                      /></svg
+                    ><textarea
+                      id="mText"
+                      required
+                      data-ph="f_msg_ph"
+                      placeholder="Your message"
+                    ></textarea>
+                  </div>
+                </div>
+                <button class="btn btn-primary full" type="submit">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m22 2-7 20-4-9-9-4Z" />
+                    <path d="M22 2 11 13" /></svg
+                  ><span data-i="f_send">Send Message</span>
+                </button>
+              </form>
+              <h3 data-i="findme_t">Find me</h3>
+              <div id="linkCards"></div>
+            </div>
+            <div>
+              <form id="cmForm">
+                <div class="field plain">
+                  <label data-i="c_label">Comment</label
+                  ><textarea
+                    id="cText"
+                    required
+                    data-ph="c_ph"
+                    placeholder="Write your comment here..."
+                  ></textarea>
+                </div>
+                <div class="field">
+                  <label data-i="c_name">Your name</label>
+                  <div class="inp">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                      <path d="M4 21a8 8 0 0 1 16 0" /></svg
+                    ><input
+                      id="cName"
+                      required
+                      data-ph="c_name_ph"
+                      placeholder="Your name"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label data-i="c_photo">Profile photo (optional)</label>
+                  <label class="file-btn" for="cFile"
+                    ><svg viewBox="0 0 24 24">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="9" cy="9" r="2" />
+                      <path d="m21 15-5-5L5 21" /></svg
+                    ><span id="cFileLbl" data-i="c_choose"
+                      >Choose photo</span
+                    ></label
+                  >
+                  <input type="file" id="cFile" accept="image/*" hidden />
+                </div>
+                <div class="hintsm" data-i="c_max">Max file size 5 MB</div>
+                <button class="btn btn-primary full" type="submit">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m22 2-7 20-4-9-9-4Z" />
+                    <path d="M22 2 11 13" /></svg
+                  ><span data-i="c_send">Send Comment</span>
+                </button>
+              </form>
+              <div class="cm-list" id="cmList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="foot-grid">
+          <div>
+            <div class="brand">
+              <svg viewBox="0 0 24 24">
+                <path d="m4 17 6-6-6-6" />
+                <path d="M12 19h8" /></svg
+              ><span id="brandName">Yonkhemra.dev</span>
+            </div>
+            <p class="d" data-i="foot_d">
+              Building practical web applications with clean code, sharp
+              typography and a smooth user experience.
+            </p>
+          </div>
+          <div>
+            <h5 data-i="foot_nav">Navigation</h5>
+            <ul>
+              <li><a href="#home" data-i="nav_home">Home</a></li>
+              <li><a href="#about" data-i="nav_about">About</a></li>
+              <li><a href="#portfolio" data-i="nav_portfolio">Portfolio</a></li>
+              <li><a href="#contact" data-i="nav_contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 data-i="foot_con">Connect</h5>
+            <div class="socials" id="footSocials"></div>
+          </div>
+        </div>
+        <div class="foot-bot" id="copy"></div>
+      </div>
+    </footer>
+
+    <button class="totop" id="toTop">
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#fff"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m18 15-6-6-6 6" /></svg
+      ><span data-i="totop">Back to top</span>
+    </button>
+
+    <!-- Project detail page -->
+    <div id="project-page">
+      <div class="container">
+        <div class="pp-top">
+          <button class="back" id="ppBack">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 12H5" />
+              <path d="m12 19-7-7 7-7" /></svg
+            ><span data-i="back">Back</span>
+          </button>
+          <div class="crumb">
+            <span data-i="t_proj">Projects</span><span>›</span
+            ><b id="ppCrumb"></b>
+          </div>
+        </div>
+        <div class="pp-grid">
+          <div>
+            <h1 id="ppTitle"></h1>
+            <p class="desc" id="ppDesc"></p>
+            <h2>
+              <svg viewBox="0 0 24 24">
+                <path d="m16 18 6-6-6-6" />
+                <path d="m8 6-6 6 6 6" /></svg
+              ><span data-i="p_tech">Technologies Used</span>
+            </h2>
+            <div class="chips" id="ppChips"></div>
+            <h2>
+              <svg viewBox="0 0 24 24">
+                <path d="M9 11l3 3L22 4" />
+                <path
+                  d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                /></svg
+              ><span data-i="p_feat">Key Features</span>
+            </h2>
+            <ul class="feat" id="ppFeat"></ul>
+          </div>
+          <div class="shot" id="ppShot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="lightbox"><img id="lbImg" alt="" /></div>
+    <div class="toast" id="toast"></div>
+    <input type="file" id="shotFile" accept="image/*" hidden />
+    <input type="file" id="galFile" accept="image/*" multiple hidden />
+    <input type="file" id="songFile" accept="audio/*" multiple hidden />
+    <script src="portfolio.js"></script>
+  </body>
+</html>
